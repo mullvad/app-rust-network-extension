@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!--
+    Bundle identifier of the extension (not the wrapping bundle)
+    
+    MyApp.app/
+    └── Contents/
+        ├── Info.plist
+        ├── Library/
+        │   └── SystemExtensions/
+        │       └── dnsproxy.systemextension/
+                      ↑↑↑↑
+                      this
+            (without ".systemextension")
+    -->
+    <key>CFBundleIdentifier</key>
+    <string>dnsproxy</string>
+
+    <!-- Can be anything -->
+    <key>CFBundleName</key>
+    <string>Rusty DNS Proxy</string>
+
+    <!-- Must match the filename of the extension executable -->
+    <key>CFBundleExecutable</key>
+    <string>dnsproxy</string>
+
+    <!-- This can be anything -->
+    <key>NSSystemExtensionUsageDescription</key>
+    <string>This is a Rusty DNS proxy.</string>
+
+    <key>NetworkExtension</key>
+    <dict>
+        <key>NEProviderClasses</key>
+        <dict>
+            <!-- class exported from rust that inherits NEDNSProxyProvider -->
+            <key>com.apple.networkextension.dns-proxy</key>
+            <string>RustyDnsProxy</string>
+        </dict>
+    </dict>
+
+    <!-- TODO: is this redundant? -->
+    <key>NSExtension</key>
+    <dict>
+        <key>NSExtensionPointIdentifier</key>
+        <string>com.apple.networkextension.dns-proxy</string>
+        <key>NSExtensionPrincipalClass</key>
+        <string>RustyDnsProxy</string>
+    </dict>
+
+    <!-- Must be `SYSX` for system extensions -->
+    <key>CFBundlePackageType</key>
+    <string>SYSX</string>
+    
+    <!-- Random stuff. Not relevant. -->
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>11.0</string>
+</dict>
+</plist>
