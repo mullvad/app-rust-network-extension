@@ -16,7 +16,7 @@
             (without ".systemextension")
     -->
     <key>CFBundleIdentifier</key>
-    <string>dnsproxy</string>
+    <string>net.mullvad.MullvadVPN.DNSProxy</string>
 
     <!-- Can be anything -->
     <key>CFBundleName</key>

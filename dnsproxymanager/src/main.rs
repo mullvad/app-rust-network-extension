@@ -35,7 +35,9 @@ enum Command {
     Disable,
 }
 
-const EXTENSION_BUNDLE_ID: LazyLock<&NSString> = LazyLock::new(|| ns_string!("dnsproxy"));
+// NOTE: Keep in sync with ../../ext.Info.plist
+const EXTENSION_BUNDLE_ID: LazyLock<&NSString> =
+    LazyLock::new(|| ns_string!("net.mullvad.MullvadVPN.DNSProxy"));
 
 fn main() {
     let opt = Opt::parse();

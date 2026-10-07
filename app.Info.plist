@@ -6,8 +6,9 @@
     <key>CFBundleExecutable</key>
     <string>dnsproxymanager</string>
 
+    <!-- TODO: .app extension? -->
     <key>CFBundleIdentifier</key>
-    <string>dnsproxy.app</string>
+    <string>net.mullvad.MullvadVPN.DNSProxy</string>
 
     <!-- Can be anything, i think? -->
     <key>CFBundleName</key>
